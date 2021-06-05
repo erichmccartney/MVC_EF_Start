@@ -5,14 +5,14 @@ namespace MVC_EF_Start.Models
 {
   public class Company
   {
-    [Key]
+    [Key] // decoration indicates primary key for line below
     public string symbol { get; set; }
     public string name { get; set; }
     public string date { get; set; }
     public bool isEnabled { get; set; }
     public string type { get; set; }
     public string iexId { get; set; }
-    public List<Quote> Quotes { get; set; }
+    public List<Quote> Quotes { get; set; }  // list indicates table relationship, 1 company has many quotes
   }
 
   public class Quote
