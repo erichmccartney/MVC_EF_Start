@@ -26,6 +26,8 @@ namespace MVC_EF_Start.Controllers
         public async Task<ViewResult> DatabaseOperations()
         {
             // CREATE operation
+            // Comment out after creation
+            /*
             Company MyCompany = new Company();
             MyCompany.Id = "MCOB";
             MyCompany.name = "ISM";
@@ -74,10 +76,23 @@ namespace MVC_EF_Start.Controllers
 
             dbContext.SaveChanges();
 
+            */
+
             // READ operation
-            Company CompanyRead1 = dbContext.Companies
+            Company CompanyRead1 = dbContext.Companies //or .CreateDbCommand to use pure SQL syntax
                                     .Where(c => c.Id == "MCOB")
+                                    /*.Where(c => c.Quotes.Count > 20 &&
+                                                    c.name.Contains("MCOB")) */ //anonymous function
                                     .First();
+            
+            /*
+            int CompanyQuotesSum = dbContext.Companies
+                                            .Where(c => c.name == "MCOB")
+                                            .First()
+                                            .Quotes
+                                            .Select(q => q.high)
+                                            .Aggregate()
+            */
 
             Company CompanyRead2 = dbContext.Companies
                                     .Include(c => c.Quotes)
