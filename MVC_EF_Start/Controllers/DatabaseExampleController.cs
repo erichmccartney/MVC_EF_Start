@@ -11,8 +11,9 @@ namespace MVC_EF_Start.Controllers
 {
     public class DatabaseExampleController : Controller
     {
-        public ApplicationDbContext dbContext;
+        public ApplicationDbContext dbContext;  // "dbContect" EF reference property
 
+        // Constructor Method is a method that has the same name as the class
         public DatabaseExampleController(ApplicationDbContext context)
         {
             dbContext = context;
