@@ -41,21 +41,21 @@ namespace MVC_EF_Start.Models
     }
     public class Course
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public List<Enrollment> enrollments { get; set; }
     }
 
     public class Student
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public List<Enrollment> enrollments { get; set; }
     }
 
     public class Enrollment
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public Course course { get; set; }
         public Student student { get; set; }
         public string grade { get; set; }
