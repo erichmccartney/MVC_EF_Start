@@ -28,7 +28,6 @@ namespace MVC_EF_Start.Controllers
         {
             // CREATE operation
             // Comment out after creation
-            /*
             Company MyCompany = new Company();
             MyCompany.Id = "MCOB";
             MyCompany.name = "ISM";
@@ -76,8 +75,6 @@ namespace MVC_EF_Start.Controllers
             dbContext.Quotes.Add(MyCompanyQuote2);
 
             dbContext.SaveChanges();
-
-            */
 
             // READ operation
             Company CompanyRead1 = dbContext.Companies //or .CreateDbCommand to use pure SQL syntax
